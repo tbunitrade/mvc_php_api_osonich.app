@@ -1,0 +1,69 @@
+/*inner slider*/
+.carousel-inner {
+  //background: red;
+
+  @media (min-width: $screen-sm-min){
+    display: none;
+  }
+  .item {
+   margin: auto;
+
+    h2{
+      font-size: 16px;
+      font-family: 'Open Sans';
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      margin-top: 12px;
+      letter-spacing: 1.0px;
+    }
+  }
+
+  .container-price {
+    position: relative;
+    margin: auto;
+    width: 285px;
+
+    .price {
+      position: absolute;
+      top: 235px;
+      width: 100%;
+      max-width: 281px;
+      text-align: center;
+      background-color:rgba(138,230,207, .8);
+      font-size: 18px;
+      font-family: 'Open Sans';
+      font-weight: bold;
+      color: $psale;
+    }
+  }
+}
+/*end of inner slider*/
+/*control*/
+.carousel-control {
+  background-image:none!important;
+}
+
+.right,
+.left {
+  background-image: url("../img/arrow.png")!important;
+  background-repeat: no-repeat!important;
+  background-position: center center;
+}
+
+.left{
+  transform: rotate(180deg);
+}
+
+.right {
+  right: 4px!important;
+}
+/*end of control*/
+
+.sCont {
+  display: block;
+
+  @media (min-width: $screen-sm-min) {
+    display: none;
+  }
+}
