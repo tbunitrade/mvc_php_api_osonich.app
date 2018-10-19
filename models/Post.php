@@ -8,7 +8,6 @@
 
 class Post
 {
-
     // return Single post by Id
     public static function getPostItemById($id)
     {//db request
@@ -27,7 +26,6 @@ class Post
 
             return $postItem;
         }
-
     }
     //return list (array) of items
     public static function getPostList()
@@ -52,14 +50,20 @@ class Post
         return $postList;
     }
 
-    public static function updatePostList()
+    public static function createPost()
     {
         $db = Db::getConnection();
+         $sql = 'INSERT INTO post '
+                .'( email, content, author_name)'
+                .'VALUES'
+                .'($email,$content,$myname)';
+        //$result = $db->prepare($sql);
+//        $result->bindParam(':myname',$myname,PDO::PARAM_STR);
+//        $result->bindParam(':email',$email,PDO::PARAM_STR);
+//        $result->bindParam(':content',$content,PDO::PARAM_STR);
 
-        $sql = "INSERT INTO `post` ( id, date, email, content, author_name ) ";
+        $result= $db->exec($sql);
 
         return true;
-
-
     }
 }

@@ -26,19 +26,28 @@ class PostController
             require_once(ROOT.'/views/post/post.php');
             //echo ' actiovView ';
         }
-        //echo '<br>'.$category;
-        //echo '<br>'.$id;
 
         return true;
     }
 
     public function actionCreate()
     {
-        require_once(ROOT.'/views/post/create.php');
+        if ( isset($_POST['submit'])) {
 
-        if (! empty($_POST)) {
-            print_r($_POST); exit;
+
+            $myname = $_POST['myname'];
+            $email = $_POST['email'];
+            $content = $_POST['content'];
+            Post::createPost();
         }
+
+
+
+        require_once(ROOT.'/views/post/create.php');
         return true;
+
+
+
+
     }
 }

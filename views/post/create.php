@@ -7,18 +7,18 @@
     <form class="myForm" method="post" action="">
 
         <fieldset class="form-group">
-            <label for="name">Имя :</label>
-            <input id="name" type="name" class="form-control" placeholder="укажите имя">
+            <label for="myname">Имя :</label>
+            <input id="myname" name="myname" type="text" class="form-control" placeholder="укажите имя">
         </fieldset>
 
         <fieldset class="form-group">
             <label for="email">Ваша почта :</label>
-            <input id="email" type="email" class="form-control" placeholder="Email" required>
+            <input id="email" name="email" type="email" class="form-control" placeholder="Email" required>
         </fieldset>
 
         <fieldset>
-            <label for="textarea">Текст задачи :</label>
-            <textarea id="task" rows="10" cols="45" type="textarea" name="userText" placeholder="Сообщение" value="<?php echo $userText; ?>"/></textarea>
+            <label for="content">Текст задачи :</label>
+            <textarea name="content" id="task" rows="10" cols="45" type="textarea" placeholder="Сообщение" value=""/></textarea>
         </fieldset>
 
         <fieldset class="form-group">
@@ -77,5 +77,7 @@
 
 
 </div>
+<?php
 
-<?php include ROOT . '/views/layouts/footer.php'; ?>
+
+ include ROOT . '/views/layouts/footer.php'; ?>
