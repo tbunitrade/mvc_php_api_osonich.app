@@ -50,17 +50,22 @@ class Post
         return $postList;
     }
 
-    public static function createPost()
+    public static function createPost($email, $content, $myname)
     {
+//        CREATE TABLE IF NOT EXISTS post (
+//        id INT UNSIGNED AUTO_INCREMENT NOT NULL,
+//      parent_id INT UNSIGNED,
+//      title VARCHAR(255) NOT NULL,
+//      url VARCHAR(500) NOT NULL,
+//      PRIMARY KEY (id)
+//    )
+
         $db = Db::getConnection();
-         $sql = 'INSERT INTO post '
+        $sql = 'INSERT INTO post '
                 .'( email, content, author_name)'
                 .'VALUES'
-                .'($email,$content,$myname)';
-        //$result = $db->prepare($sql);
-//        $result->bindParam(':myname',$myname,PDO::PARAM_STR);
-//        $result->bindParam(':email',$email,PDO::PARAM_STR);
-//        $result->bindParam(':content',$content,PDO::PARAM_STR);
+                ."('$email','$content','$myname')";
+
 
         $result= $db->exec($sql);
 

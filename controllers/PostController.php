@@ -33,21 +33,15 @@ class PostController
     public function actionCreate()
     {
         if ( isset($_POST['submit'])) {
-
-
+        //    Post::createPost($email, $myname, $content);
             $myname = $_POST['myname'];
             $email = $_POST['email'];
             $content = $_POST['content'];
-            Post::createPost();
+            Post::createPost($email, $myname, $content);
+
         }
-
-
 
         require_once(ROOT.'/views/post/create.php');
         return true;
-
-
-
-
     }
 }
