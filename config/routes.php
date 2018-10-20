@@ -9,6 +9,7 @@ return array(
 //    'create' => 'post/create', // actionCreate в ПостКонтроллер
 
     'admin' => 'admin/login', // actionLogin в AdminКонтроллер
+    'login' => 'site/login', // actionLogin в AdminКонтроллер
 
     '^/*$' => 'site/index'
 

@@ -14,4 +14,10 @@ class SiteController
 
         return true;
     }
+
+    public function actionLogin() {
+        require_once (ROOT . '/views/site/login.php');
+
+        return true;
+    }
 }
