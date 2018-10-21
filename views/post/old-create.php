@@ -4,7 +4,7 @@
 <div class="container">
     <h1>Cоздать таск</h1>
 
-    <form class="myForm" method="post" action="" enctype="multipart/form-data">
+    <form class="myForm" method="post" action="">
 
         <fieldset class="form-group">
             <label for="myname">Имя :</label>
@@ -22,12 +22,30 @@
         </fieldset>
 
         <fieldset class="form-group">
+            <label for="InputImg">Картинка :<br>
+                <div class="upload_img_wrapper"><div id="preview_img"></div></div>
+            </label>
+            <input id="image" type="file" name="InputImg" preview-target-id="preview_img">
+            <p class="help-block">Допустимый формат jpg/gif/png, допустимый размер - не более 320х240 пикселей, размер файла не больше 8192КБ </p>
+            <script>
+                $('input[type="file"][preview-target-id]').on('change', function() {
+                    var input = $(this)
 
+                    if (!window.FileReader) return false // check for browser support
 
-                Картинка:
-            <input type="file" name="file" /> <br />
-            <input type="submit" value="Upload" />
+                    if (input[0].files && input[0].files[0]) {
 
+                        var reader = new FileReader()
+                        reader.onload = function (e) {
+                            var target = $('#' + input.attr('preview-target-id'))
+                            var background_image = 'url(' + e.target.result + ')'
+                            target.css('background-image', background_image)
+                            target.parent().show()
+                        }
+                        reader.readAsDataURL(input[0].files[0]);
+                    }
+                })
+            </script>
         </fieldset>
         <div class="row">
             <div class="col-md-6">

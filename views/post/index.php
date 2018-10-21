@@ -27,7 +27,7 @@
 
                         </li>
                         <li class="col-md-3">
-                            <img class="img-responsive" src="/template/<?php echo $postItem['preview'] ;?>">
+                            <img class="img-responsive" src="<?php echo $postItem['preview'] ;?>">
 
                         </li>
                 </div>

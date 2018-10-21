@@ -35,11 +35,25 @@ class PostController
         if ( isset($_POST['submit'])) {
         //    Post::createPost($email, $myname, $content);
             $myname = $_POST['myname'];
+
+            $tmpfile = $_FILES['file']['tmp_name'];
+            $filename = $_FILES['file']['name'];
+            $uploaddir = 'uploads/';
+            $uploadfile = $uploaddir . $filename;
+//            if(move_uploaded_file($tmpfile, $uploadfile)) {
+//                echo 'filehere' . $uploadfile;
+//            }
+
+            $preview = $uploadfile;
+
             $email = $_POST['email'];
             $content = $_POST['content'];
-            Post::createPost($email, $myname, $content);
+
+            Post::createPost($email, $myname, $content , $preview);
 
         }
+
+
 
         require_once(ROOT.'/views/post/create.php');
         return true;

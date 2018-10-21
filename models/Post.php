@@ -34,7 +34,7 @@ class Post
 
         $postList = array();
 
-        $result = $db->query('SELECT id, date, email, content, author_name , preview FROM post ORDER BY date DESC LIMIT 4');
+        $result = $db->query('SELECT id, date, email, content, author_name , preview FROM post ORDER BY date DESC LIMIT 40');
         $i = 0;
 
         while ($row = $result->fetch()) {
@@ -50,7 +50,7 @@ class Post
         return $postList;
     }
 
-    public static function createPost($email, $content, $myname)
+    public static function createPost($email, $content, $myname, $preview)
     {
 //        CREATE TABLE IF NOT EXISTS post (
 //        id INT UNSIGNED AUTO_INCREMENT NOT NULL,
@@ -62,9 +62,9 @@ class Post
 
         $db = Db::getConnection();
         $sql = 'INSERT INTO post '
-                .'( email, content, author_name)'
+                .'( email, content, author_name, preview)'
                 .'VALUES'
-                ."('$email','$content','$myname')";
+                ."('$email','$content','$myname','$preview')";
 
 
         $result= $db->exec($sql);
