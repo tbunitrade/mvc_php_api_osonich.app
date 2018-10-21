@@ -23,10 +23,29 @@
 
         <fieldset class="form-group">
 
+            <label for="InputImg">Картинка :<br>
+                <div class="upload_img_wrapper"><div id="preview_img"></div></div>
+            </label>
+            <input type="file" name="file"  preview-target-id="preview_img" / > <br />
+            <script>
+                $('input[type="file"][preview-target-id]').on('change', function() {
+                    var input = $(this)
 
-                Картинка:
-            <input type="file" name="file" /> <br />
-            <input type="submit" value="Upload" />
+                    if (!window.FileReader) return false // check for browser support
+
+                    if (input[0].files && input[0].files[0]) {
+
+                        var reader = new FileReader()
+                        reader.onload = function (e) {
+                            var target = $('#' + input.attr('preview-target-id'))
+                            var background_image = 'url(' + e.target.result + ')'
+                            target.css('background-image', background_image)
+                            target.parent().show()
+                        }
+                        reader.readAsDataURL(input[0].files[0]);
+                    }
+                })
+            </script>
 
         </fieldset>
         <div class="row">
