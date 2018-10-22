@@ -6,14 +6,13 @@
  * Time: 12:12
  */
 
-class AdminController
+class AdminController extends AdminBase
 {
-    public function actionLogin(){
-
-    }
     public function actionIndex() {
         // Проверка доступа
-        self::checkAdmin();
+       self::checkAdmin();
+
+       echo 'adminka';
 
         // Подключаем вид
         require_once(ROOT . '/views/admin/index.php');

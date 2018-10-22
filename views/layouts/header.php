@@ -21,10 +21,22 @@
                     <a class="navbar-brand" href="#">Тестовый таск</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/">Home</a></li>
+                    <li class="active"><a href="/">Главная </a></li>
                     <li><a href="post">Задания</a></li>
                     <li><a href="create">Создать задане</a></li>
-                    <li><a href="login">Войти</a></li>
+                    <?php
+                    if (isset($_SESSION['user'])) {
+                        ?>
+                        <li ><a href="admin">Кабинет</a> </li>
+                    <?php
+                    }
+                    else { ?>
+                        <li><a href="login">Войти</a></li>
+                    <?php
+                    }
+                    ?>
+
+
 
                 </ul>
             </div>

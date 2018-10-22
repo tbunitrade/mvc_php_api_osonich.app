@@ -16,7 +16,7 @@ class SiteController
     }
 
     public function actionLogin() {
-        require_once (ROOT . '/views/site/login.php');
+        require_once(ROOT . '/views/site/login.php');
 
         return true;
     }

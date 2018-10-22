@@ -8,8 +8,12 @@ return array(
 //    'post' => 'post/list', // actionIndex в ПостКонтроллер
 //    'create' => 'post/create', // actionCreate в ПостКонтроллер
 
-    'admin' => 'admin/login', // actionLogin в AdminКонтроллер
-    'login' => 'site/login', // actionLogin в AdminКонтроллер
+    'admin' => 'admin/index', // actionLogin в AdminКонтроллер
+    'login' => 'user/login', // actionLogin в AdminКонтроллер
+    'user/' => 'admin/index',
+
+    'edit/([0-9]+)' => 'user/edit/$1/$2',
+    'user/logout' => 'user/logout',
 
     '^/*$' => 'site/index'
 

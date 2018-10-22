@@ -52,14 +52,6 @@ class Post
 
     public static function createPost($email, $content, $myname, $preview)
     {
-//        CREATE TABLE IF NOT EXISTS post (
-//        id INT UNSIGNED AUTO_INCREMENT NOT NULL,
-//      parent_id INT UNSIGNED,
-//      title VARCHAR(255) NOT NULL,
-//      url VARCHAR(500) NOT NULL,
-//      PRIMARY KEY (id)
-//    )
-
         $db = Db::getConnection();
         $sql = 'INSERT INTO post '
                 .'( email, content, author_name, preview)'
@@ -71,4 +63,26 @@ class Post
 
         return true;
     }
+
+    public static function updatePost($id)
+    {
+        $db = Db::getConnection();
+        $sql = '
+            UPDATE post SET
+                email = :email,
+                content = :content,
+                author_name = :author_name,
+                preview = :preview           
+            
+            WHERE 
+            id = :id 
+            ';
+
+
+        $result= $db->exec($sql);
+
+        return true;
+    }
+
+
 }

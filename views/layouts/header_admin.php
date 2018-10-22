@@ -18,14 +18,12 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">ADMIN PANEL</a>
+                    <a class="navbar-brand" href="#">PANEL</a>
                 </div>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="/">Home</a></li>
-                    <li><a href="post">Задания</a></li>
-                    <li><a href="create">Создать задане</a></li>
-                    <li><a href="login">Войти</a></li>
-
+                    <li><a href="../admin">Admin</a></li>
+                    <li><a href="posts">Таски</a></li>
+                    <li><a href="logout">Выйти</a></li>
                 </ul>
             </div>
         </nav>
