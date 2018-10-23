@@ -58,10 +58,14 @@ class UserController
     public function actionLogout()
     {
         // Стартуем сессию
-       echo 'logout';
-        return true;
-    }
+        session_start();
 
+        // Удаляем информацию о пользователе из сессии
+        unset($_SESSION["user"]);
+
+        // Перенаправляем пользователя на главную страницу
+        header("Location: /");
+    }
     public function actionUser() {
 
         // Удаляем информацию о пользователе из сессии
