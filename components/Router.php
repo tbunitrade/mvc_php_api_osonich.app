@@ -43,6 +43,8 @@ class Router
         // Получаем строку запроса
         $uri = $this->getURI();
 
+        //var_dump($this->routes);die;
+
         // Проверяем наличие такого запроса в массиве маршрутов (routes.php)
         foreach ($this->routes as $uriPattern => $path) {
 
@@ -52,6 +54,8 @@ class Router
                 // Получаем внутренний путь из внешнего согласно правилу.
                 $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
 
+                //var_dump($internalRoute);die;
+
                 // Определить контроллер, action, параметры
 
                 $segments = explode('/', $internalRoute);
@@ -59,12 +63,15 @@ class Router
                 $controllerName = array_shift($segments) . 'Controller';
                 $controllerName = ucfirst($controllerName);
 
+
                 $actionName = 'action' . ucfirst(array_shift($segments));
+
                 $actionNamesegments = explode('?', $actionName);
+
                 $actionName = $actionNamesegments[0];
 
                 $parameters = $segments;
-
+                //var_dump($parameters);die;
                 // Подключить файл класса-контроллера
                 $controllerFile = ROOT . '/controllers/' .
                     $controllerName . '.php';
