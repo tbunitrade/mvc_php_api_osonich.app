@@ -13,7 +13,7 @@ class PostController
     {
         $postList = array();
         $posts = Post::getPostList();
-        //$statuses = Post::getStatuses();
+        $statuses = Post::getStatuses();
         //$postList = $posts['posts'];
         require_once(ROOT.'/views/post/index.php');
         return true;
