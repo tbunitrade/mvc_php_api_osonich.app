@@ -12,9 +12,9 @@ class PostController
     public function actionList()
     {
         $postList = array();
-        $postList = Post::getPostList();
+        $posts = Post::getPostList();
+        $postList = $posts['posts'];
         require_once(ROOT.'/views/post/index.php');
-
         return true;
     }
 
@@ -22,20 +22,17 @@ class PostController
     {
         if($id) {
             $postItem = Post::getPostItemById($id);
-
             require_once(ROOT.'/views/post/post.php');
             //echo ' actiovView ';
         }
-
         return true;
     }
 
     public function actionCreate()
     {
         if ( isset($_POST['submit'])) {
-        //    Post::createPost($email, $myname, $content);
+            //    Post::createPost($email, $myname, $content);
             $myname = $_POST['myname'];
-
             $tmpfile = $_FILES['file']['tmp_name'];
             $filename = $_FILES['file']['name'];
             $uploaddir = 'uploads/';
@@ -43,19 +40,49 @@ class PostController
 //            if(move_uploaded_file($tmpfile, $uploadfile)) {
 //                echo 'filehere' . $uploadfile;
 //            }
-
             $preview = $uploadfile;
-
             $email = $_POST['email'];
             $content = $_POST['content'];
-
             Post::createPost($email, $myname, $content , $preview);
 
+            $dir_path = $filename;
+            //var_dump( $dir_path);
+            if(is_dir($dir_path))
+            {
+                $files = scandir($dir_path);
+
+                for($i = 0; $i < count($files); $i++)
+                {
+                    if($files[$i] != '.' && $files[$i] != '..')
+                    {
+                        echo "File Name -> $files[$i]<br>";
+
+                        $imageSize = getimagesize("$dir_path$files[$i]");
+
+                        echo " -Image Width : $imageSize[0]<br>";
+
+                        echo " -Image Height : $imageSize[1]<br>";
+
+                        //jpg or png or gif .........
+                        echo " -Image Type : $imageSize[2]<br>";
+
+                        echo " -Image Width And Height: $imageSize[3]<br>";
+
+                        // display the images
+                        echo"<img src='$dir_path$files[$i]' style='width:100px;height:100px;'><br><br>";
+                    }
+                }
+            }
+
         }
-
-
-
         require_once(ROOT.'/views/post/create.php');
+        return true;
+    }
+
+    public function actionCrop() {
+
+
+
         return true;
     }
 }

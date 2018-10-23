@@ -32,6 +32,22 @@
                         </li>
                 </div>
             <?php endforeach; ?>
+            <ul>
+                <?php for($i = 1; $i <= $posts['pages']; $i++) : ?>
+                    <li><a href="/post?page=<?= $i ?>&sort=<?= $posts['sort'] ?>&direction=<?= $posts['direction'] ?>"><?= $i ?></a></li>
+                <?php endfor ?>
+            </ul>
+            <p>Choose order:<br>
+                <a href="/post?page=<?= $posts['page'] ?>&sort=id&direction=<?= $posts['direction'] ?>">ID</a><br>
+                <a href="/post?page=<?= $posts['page'] ?>&sort=date&direction=<?= $posts['direction'] ?>">Date</a><br>
+                <a href="/post?page=<?= $posts['page'] ?>&sort=email&direction=<?= $posts['direction'] ?>">Email</a><br>
+            </p>
+            <p>Choose direction:<br>
+                <a href="/post?page=<?= $posts['page'] ?>&sort=<?= $posts['sort'] ?>&direction=ASC">ASC</a><br>
+                <a href="/post?page=<?= $posts['page'] ?>&sort=<?= $posts['sort'] ?>&direction=DESC">DESC</a><br>
+            </p>
+            <p>Total pages: <?= $posts['pages'] ?></p>
+            <p>Current pages: <?= $posts['page'] ?></p>
 
         </div>
     </div>

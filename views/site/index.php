@@ -19,7 +19,7 @@
                 <li style="list-style-type: none">- картинки;</li>
             </ul>
 
-                <div class="list-group-item list-group-item-info">
+                <div class="list-group-item list-group-item-danger">
                     1  Стартовая страница - список задач с возможностью <br>
                 сортировки по имени пользователя, email и статусу.
                 </div>
@@ -37,15 +37,15 @@
                 он должен работать без перезагрузки страницы.
                 </div>
                 <br>
-                <div class="list-group-item list-group-item-warning">
+                <div class="list-group-item list-group-item-success">
                     5 К задаче можно прикрепить картинку.
                 </div>
                 <br>
-                <div class="list-group-item list-group-item-success">
+                <div class="list-group-item list-group-item-danger">
                     5.1   Требования к изображениям - формат JPG/GIF/PNG, не более 320х240 пикселей.<br>
                 </div>
                 <br>
-                <div class="list-group-item list-group-item-danger"> 5.2  При попытке загрузить изображение большего размера, <br>
+                <div class="list-group-item list-group-item-success"> 5.2  При попытке загрузить изображение большего размера, <br>
                 картинка должна быть пропорционально уменьшена до заданных размеров.
                 (НА ОТОБРАЖЕНИИ превью до загрузки?)
                 </div>
@@ -54,7 +54,7 @@
                 6.1 Сделайте вход для администратора (логин "admin", пароль "123").<br>
                 </div>
                 <br>
-                <div class="list-group-item list-group-item-danger">
+                <div class="list-group-item list-group-item-success">
                     6.2 Администратор имеет возможность редактировать текст задачи и поставить галочку о выполнении.<br>
                 </div>
                 <div class="list-group-item list-group-item-danger">

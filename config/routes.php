@@ -10,10 +10,11 @@ return array(
 
     'admin' => 'admin/index', // actionLogin в AdminКонтроллер
     'login' => 'user/login', // actionLogin в AdminКонтроллер
-    'user/' => 'admin/index',
+    'user' => 'user/login',
 
-    'edit/([0-9]+)' => 'user/edit/$1/$2',
-    'user/logout' => 'user/logout',
+    'edit/([0-9]+)' => 'user/edit/$1',
+    'user/logout' => '^/*$',
+    'edit/logout' => 'site/index',
 
     '^/*$' => 'site/index'
 
