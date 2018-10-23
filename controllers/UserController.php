@@ -58,13 +58,8 @@ class UserController
     public function actionLogout()
     {
         // Стартуем сессию
-        session_start();
-
-        // Удаляем информацию о пользователе из сессии
-        unset($_SESSION["user"]);
-
-        // Перенаправляем пользователя на главную страницу
-        header("Location: /");
+       echo 'logout';
+        return true;
     }
 
     public function actionUser() {
@@ -79,6 +74,7 @@ class UserController
     public function actionPost() {
         $postList = array();
         $posts = Post::getPostList();
+        $statuses = Post::getStatuses();
         $postList = $posts['posts'];
         require_once(ROOT.'/views/user/posts.php');
 
@@ -95,9 +91,11 @@ class UserController
             $status = $_POST['status'];
 
             Post::updatePost($id, $email, $myname, $content, $status );
-            header('/post');
+            header("Location: /user/posts");
             return true;
 //            Post::updateStatus($id, $status);
+
+
         }
 
         if($id) {
@@ -107,6 +105,5 @@ class UserController
         }
 
         return true;
-        header("Location: /");
     }
 }

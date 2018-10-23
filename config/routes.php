@@ -10,7 +10,7 @@ return array(
     'user' => 'user/login',
 
     'edit/([0-9]+)' => 'user/edit/$1',
-    'user/logout' => '^/*$',
+    'user/logout' => 'site/index',
     'edit/logout' => 'site/index',
 
     'edit/posts' => 'admin',

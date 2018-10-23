@@ -23,27 +23,26 @@
             <fieldset class="form-group">
 
                 <label for="InputImg">Картинка :<br>
-                    <div class="upload_img_wrapper"><div id="preview_img"></div></div>
+                    <div class="upload_img_wrapper">     <img id="foo" src="" height="200" alt="Image preview..."></div>
                 </label>
-
-
-                <input  type="file" name="file"  preview-target-id="preview_img"  / > <br />
+                <input type="file" name="file" onchange="previewFile()">
+                 <br />
                 <script>
-                    $('input[type="file"][preview-target-id]').on('change', function() {
-                        var input = $(this)
-                        if (!window.FileReader) return false // check for browser support
-                        if (input[0].files && input[0].files[0]) {
-                            var reader = new FileReader()
-                            reader.onload = function (e) {
-                                var target = $('#' + input.attr('preview-target-id'))
-                                var background_image = 'url(' + e.target.result + ')'
-                                target.css('background-image', background_image)
-                                target.parent().show()
-                            }
-                            reader.readAsDataURL(input[0].files[0]);
+                    function previewFile() {
+                        var preview = document.querySelector('img');
+                        var file    = document.querySelector('input[type=file]').files[0];
+                        var reader  = new FileReader();
+
+                        reader.addEventListener("load", function () {
+                            preview.src = reader.result;
+                        }, false);
+
+                        if (file) {
+                            reader.readAsDataURL(file);
                         }
-                    })
+                    }
                 </script>
+
 
             </fieldset>
             <div class="row">
@@ -64,32 +63,30 @@
                         </div>
                         <div class="modal-body">
                             <div id="toPreview">
+
                                 <script type="text/javascript">
                                     function preview() {
                                         var name = document.getElementById('myname').value;
                                         var email = document.getElementById('email').value;
                                         var task = document.getElementById('task').value;
 
-
                                         var newmname = document.querySelector('.newname').innerHTML = name;
                                         var newmail = document.querySelector('.newmail').innerHTML = email;
                                         var newtext = document.querySelector('.newtext').innerHTML = task;
 
+                                        var src = document.getElementById("foo").getAttribute("src");
+                                        console.log(src);
+                                        document.getElementById("footoo").src = src;
+
                                     }
-
                                     console.log('i run preview');
-
-
-
                                 </script>
-
 
                                 <div class="newname">2 </div>
                                 <div class="newmail">2 </div>
                                 <div class="newtext">3 </div>
-                                <img src="" id="blah2">
-
-
+                                <img id="footoo" height="200" src="" />
+                                <div class="newimage"></div>
                             </div>
                         </div>
                         <div class="modal-footer">

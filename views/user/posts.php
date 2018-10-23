@@ -19,7 +19,7 @@
 
                             <?php echo $postItem['email'] ;?>
                         </li>
-                        <li class="col-md-3">
+                        <li class="col-md-2">
 
                             <?php echo $postItem['content'] ;?>
                         </li>
@@ -27,7 +27,15 @@
                             <?php echo $postItem['author_name'] ;?>
 
                         </li>
-                        <li class="col-md-3">
+                        <li class="col-md-2">
+                            <select name="status" value="<?= $postItem['status_id'] ?>">
+                                <?php foreach ($statuses as $status) : ?>
+                                    <option disabled="disabled" value="<?= $status['id'] ?>" <?php if($status['id'] == $postItem['status_id']) echo 'selected="selected" ' ?>><?= $status['name'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
+
+                        </li>
+                        <li class="col-md-2">
                             <img class="img-responsive" src="../../<?php echo $postItem['preview'] ;?>">
 
                         </li>
