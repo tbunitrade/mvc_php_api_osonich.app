@@ -14,10 +14,8 @@
 
             <br/>
 
-            <ul>
+            <ul class="pagination">
                 <li><a href="/user/posts">Управление записями</a></li>
-
-
             </ul>
 
         </div>

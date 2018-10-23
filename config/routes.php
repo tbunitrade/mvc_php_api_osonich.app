@@ -16,6 +16,8 @@ return array(
     'user/logout' => '^/*$',
     'edit/logout' => 'site/index',
 
+    'edit/posts' => 'admin',
+
     '^/*$' => 'site/index'
 
 );

@@ -88,6 +88,7 @@ class Post
             $postList{$i}['content'] = $row['content'];
             $postList{$i}['author_name'] = $row['author_name'];
             $postList{$i}['preview'] = $row['preview'];
+            $postList{$i}['status_id'] = $row['status_id'];
             $i++;
         }
 

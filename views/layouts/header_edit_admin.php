@@ -22,7 +22,7 @@
                 </div>
                 <ul class="nav navbar-nav">
                     <li><a href="../admin">Главная</a></li>
-                    <li><a href="posts">Таски</a></li>
+                    <li><a href="../user/posts">Задания</a></li>
                     <li><a href="logout">Выйти</a></li>
                 </ul>
             </div>

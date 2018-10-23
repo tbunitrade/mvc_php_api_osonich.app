@@ -8,7 +8,7 @@
                     <div class="row myClass">
                         <li class="col-md-2">
                             <button>
-                            <a href="/edit/<?php echo $postItem['id'] ;?>">Редактировать <?php echo $postItem['id'] ;?></a>
+                            <a class="btn btn-default" href="/edit/<?php echo $postItem['id'] ;?>">Редактировать <?php echo $postItem['id'] ;?></a>
                             </button>
                         </li>
 

@@ -18,22 +18,22 @@ class UserController
         if (isset($_POST['submit'])) {
             // Если форма отправлена
             // Получаем данные из формы
-            $email = $_POST['email'];
+            $name = $_POST['name'];
             $password = $_POST['password'];
 
             // Флаг ошибок
             $errors = false;
 
             // Валидация полей
-            if (!User::checkEmail($email)) {
-                $errors[] = 'Неправильный email';
+            if (!User::checkName($name)) {
+                $errors[] = 'Неправильный name';
             }
             if (!User::checkPassword($password)) {
                 $errors[] = 'Пароль не должен быть короче 6-ти символов';
             }
 
             // Проверяем существует ли пользователь
-            $userId = User::checkUserData($email, $password);
+            $userId = User::checkUserData($name, $password);
 
             if ($userId == false) {
                 // Если данные неправильные - показываем ошибку
@@ -107,5 +107,6 @@ class UserController
         }
 
         return true;
+        header("Location: /");
     }
 }

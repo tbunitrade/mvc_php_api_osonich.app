@@ -12,8 +12,6 @@ class AdminController extends AdminBase
         // Проверка доступа
        self::checkAdmin();
 
-       echo 'adminka';
-
         // Подключаем вид
         require_once(ROOT . '/views/admin/index.php');
         return true;
