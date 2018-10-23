@@ -19,12 +19,12 @@
                 <li style="list-style-type: none">- картинки;</li>
             </ul>
 
-                <div class="list-group-item list-group-item-danger">
+                <div class="list-group-item list-group-item-success">
                     1  Стартовая страница - список задач с возможностью <br>
                 сортировки по имени пользователя, email и статусу.
                 </div>
                 <br>
-                <div class="list-group-item list-group-item-danger">
+                <div class="list-group-item list-group-item-success">
                     2 Вывод задач нужно сделать страницами по 3 штуки (с пагинацией).
                 </div>
                 <br>
@@ -32,7 +32,7 @@
                     3 (готово) Видеть список задач и создавать новые может любой посетитель без регистрации.
                 </div>
                 <br>
-                <div class="list-group-item list-group-item-warning">
+                <div class="list-group-item list-group-item-success">
                     4 (почти готово) Перед сохранением новой задачи можно нажать "Предварительный просмотр", <br>
                 он должен работать без перезагрузки страницы.
                 </div>
