@@ -60,8 +60,8 @@ class Router
                 $controllerName = ucfirst($controllerName);
 
                 $actionName = 'action' . ucfirst(array_shift($segments));
-                $actionNamesegments = explode('?', $actionName);
-                $actionName = $actionNamesegments[0];
+                //$actionNamesegments = explode('?', $actionName);
+                //$actionName = $actionNamesegments[0];
 
                 $parameters = $segments;
 
