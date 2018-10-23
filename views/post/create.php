@@ -48,7 +48,7 @@
             </fieldset>
             <div class="row">
                 <div class="col-md-6">
-                    <input type="button" class="btn btn-default btn-block" name="button_Preview" id="button_Preview" value="Предварительный просмотр" data-toggle="modal" data-target="#Preview">
+                    <input type="button" class="btn btn-default btn-block" onclick="preview()" name="button_Preview" id="button_Preview" value="Предварительный просмотр" data-toggle="modal" data-target="#Preview">
                 </div>
                 <div class="col-md-6">
                     <input type="submit" name="submit" class="btn btn-default btn-block" value="Сохранить задание" />
@@ -63,7 +63,35 @@
                             <h4 class="modal-title" id="mLabel">Предварительный просмотр</h4>
                         </div>
                         <div class="modal-body">
-                            <div id="toPreview"></div>
+                            <div id="toPreview">
+                                <script type="text/javascript">
+                                    function preview() {
+                                        var name = document.getElementById('myname').value;
+                                        var email = document.getElementById('email').value;
+                                        var task = document.getElementById('task').value;
+
+
+                                        var newmname = document.querySelector('.newname').innerHTML = name;
+                                        var newmail = document.querySelector('.newmail').innerHTML = email;
+                                        var newtext = document.querySelector('.newtext').innerHTML = task;
+
+
+                                    }
+                              
+                                    console.log('i run preview');
+
+
+
+                                </script>
+
+
+                                <div class="newname">2 </div>
+                                <div class="newmail">2 </div>
+                                <div class="newtext">3 </div>
+                                <img src="" id="blah2">
+
+
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
