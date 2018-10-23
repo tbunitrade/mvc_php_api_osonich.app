@@ -1,4 +1,4 @@
-<?php include ROOT . '/views/layouts/header.php'; ?>
+<?php include ROOT . '/views/layouts/header_edit_admin.php'; ?>
 <div class="container">
 
     <div class="row myClass">

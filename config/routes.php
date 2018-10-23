@@ -16,7 +16,7 @@ return array(
     'edit/posts' => 'admin',
 
     'task' => 'site/index',
-    '' => 'post/list'
+    '^/*$' => 'site/index'
 
 
 );
