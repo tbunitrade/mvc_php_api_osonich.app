@@ -61,24 +61,24 @@ class Post
 
     public static function getPostList()
     {
-        //$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-        //$sort = isset($_GET['sort']) ? strval($_GET['sort']) : 'date';
-       // $direction = isset($_GET['direction']) ? strval($_GET['direction']) : 'DESC';
+        $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+        $sort = isset($_GET['sort']) ? strval($_GET['sort']) : 'date';
+        $direction = isset($_GET['direction']) ? strval($_GET['direction']) : 'DESC';
 
         $db = Db::getConnection();
         $cntPages = Post::getPageCount();
-        //$page = ($page < 1) ? 1 : $page;
-       // $page = ($page > $cntPages) ? $cntPages : $page;
-       // $sql = "
-        //    SELECT id, date, email, content, author_name, preview, status_id
-       //     FROM post
-       //     ORDER BY " . $sort . " " . $direction . "
-        //    LIMIT " . (($page - 1) * Post::$itemsPerPage) . ", " . Post::$itemsPerPage . "
-       // ";
+        $page = ($page < 1) ? 1 : $page;
+        $page = ($page > $cntPages) ? $cntPages : $page;
+        $sql = "
+            SELECT id, date, email, content, author_name, preview, status_id
+            FROM post
+            ORDER BY " . $sort . " " . $direction . " 
+            LIMIT " . (($page - 1) * Post::$itemsPerPage) . ", " . Post::$itemsPerPage . "
+        ";
         $postList = array();
 
-      $result = $db->query('SELECT id, date, email, content, author_name, preview, status_id FROM post ORDER BY date DESC LIMIT 40');
-       // $result = $db->query($sql);
+//        $result = $db->query('SELECT id, date, email, content, author_name, preview FROM post ORDER BY date DESC LIMIT 40');
+        $result = $db->query($sql);
         $i = 0;
 
         while ($row = $result->fetch()) {
@@ -93,9 +93,9 @@ class Post
         }
 
         return [
-           // 'page' => $page,
-          //  'sort' => $sort,
-          //  'direction' => $direction,
+            'page' => $page,
+            'sort' => $sort,
+            'direction' => $direction,
             'pages' => $cntPages,
             'posts' => $postList,
             ];
