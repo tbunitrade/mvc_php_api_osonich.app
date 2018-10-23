@@ -5,9 +5,6 @@ return array(
     'post' => 'post/list',
     'create' => 'post/create',
 
-//    'post' => 'post/list', // actionIndex в ПостКонтроллер
-//    'create' => 'post/create', // actionCreate в ПостКонтроллер
-
     'admin' => 'admin/index', // actionLogin в AdminКонтроллер
     'login' => 'user/login', // actionLogin в AdminКонтроллер
     'user' => 'user/login',
@@ -19,7 +16,7 @@ return array(
     'edit/posts' => 'admin',
 
     'task' => 'site/index',
-    '^/*$' => 'post/list',
-    '' => 'post/list'
+    '^/*$' => 'post/list'
+
 
 );

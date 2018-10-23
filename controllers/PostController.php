@@ -47,44 +47,10 @@ class PostController
             $content = $_POST['content'];
             Post::createPost($email, $myname, $content , $preview);
 
-//            $dir_path = $filename;
-//            //var_dump( $dir_path);
-//            if(is_dir($dir_path))
-//            {
-//                $files = scandir($dir_path);
-//
-//                for($i = 0; $i < count($files); $i++)
-//                {
-//                    if($files[$i] != '.' && $files[$i] != '..')
-//                    {
-//                        echo "File Name -> $files[$i]<br>";
-//
-//                        $imageSize = getimagesize("$dir_path$files[$i]");
-//
-//                        echo " -Image Width : $imageSize[0]<br>";
-//
-//                        echo " -Image Height : $imageSize[1]<br>";
-//
-//                        //jpg or png or gif .........
-//                        echo " -Image Type : $imageSize[2]<br>";
-//
-//                        echo " -Image Width And Height: $imageSize[3]<br>";
-//
-//                        // display the images
-//                        echo"<img src='$dir_path$files[$i]' style='width:100px;height:100px;'><br><br>";
-//                    }
-//                }
-//            }
 
         }
         require_once(ROOT.'/views/post/create.php');
         return true;
     }
 
-    public function actionCrop() {
-
-
-
-        return true;
-    }
 }
