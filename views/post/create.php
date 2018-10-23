@@ -75,9 +75,8 @@
                                         var newmail = document.querySelector('.newmail').innerHTML = email;
                                         var newtext = document.querySelector('.newtext').innerHTML = task;
 
-
                                     }
-                              
+
                                     console.log('i run preview');
 
 
