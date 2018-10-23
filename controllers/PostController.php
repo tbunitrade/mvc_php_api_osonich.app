@@ -11,12 +11,11 @@ class PostController
 {
     public function actionList()
     {
-//        $postList = array();
-//        $posts = Post::getPostList();
-//        $statuses = Post::getStatuses();
-//        $postList = $posts['posts'];
-//        require_once(ROOT.'/views/post/index.php');
-        echo 'list';
+        $postList = array();
+        $posts = Post::getPostList();
+        //$statuses = Post::getStatuses();
+        //$postList = $posts['posts'];
+        require_once(ROOT.'/views/post/index.php');
         return true;
     }
 
