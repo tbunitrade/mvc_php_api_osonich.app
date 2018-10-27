@@ -40,6 +40,6 @@ Thumbs.db
 
 #ignore next folder
 node_modules
-dummy
+#dummy
 
 db_params.php
