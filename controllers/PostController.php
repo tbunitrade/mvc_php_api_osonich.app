@@ -35,6 +35,8 @@ class PostController
         if ( isset($_POST['submit'])) {
             //    Post::createPost($email, $myname, $content);
             $myname = $_POST['myname'];
+            $secondname = $_POST['secondname'];
+            $lastname = $_POST['lastname'];
             $tmpfile = $_FILES['file']['tmp_name'];
             $filename = $_FILES['file']['name'];
             $uploaddir = 'uploads/';
@@ -43,9 +45,19 @@ class PostController
 //                echo 'filehere' . $uploadfile;
 //            }
             $preview = $uploadfile;
+            $regip = '192.168.1.1';
             $email = $_POST['email'];
+
+            $city = $_POST['city'];
+            $postindex = $_POST['postindex'];
+            $street = $_POST['street'];
+            $house = $_POST['house'];
+            $room = $_POST['room'];
+
+            $tel = $_POST['telephone'];
+
             $content = $_POST['content'];
-            Post::createPost($email, $myname, $content , $preview);
+            Post::createPost($email, $city, $postindex, $street, $house, $room, $tel, $content, $myname, $secondname, $lastname , $preview, $regip);
 
 
         }

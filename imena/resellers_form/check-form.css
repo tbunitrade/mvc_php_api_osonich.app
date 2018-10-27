@@ -1,0 +1,264 @@
+/**************************************************************
+   Демонстрационный файл стилей
+ **************************************************************/
+body {
+	font-family: Times New Roman, Times, serif;
+}
+a, a:hover {
+	color: #3b3a32;
+}
+a:hover {
+	text-decoration: none;
+}
+#main-reseller-form h1 {
+	font: normal 20px "Trebuchet MS", Helvetica, sans-serif;
+	color: #dc3409;
+}
+#main-reseller-form h2 {
+	font: normal 15px "Trebuchet MS", Helvetica, sans-serif;
+	color: #444444;
+	font-weight: bold;
+}
+/* Вся форма будет распологаться по центру экрана, ширина формы 750 пикселей */
+#main-reseller-form {
+	width: 750px;
+	margin: 0 auto;
+}
+/* Если нет доступных доменных имен для регистрации. По умолчанию - спрятано */
+#error_no_available {
+	display: none;
+}
+/* Вывод сообщений об ошибках */
+#main-reseller-form table.errors, #main-reseller-form #error_no_available {
+	border: 1px dashed #7b7a76;
+	background: #f3f2ea;
+	margin: 10px 0;
+}
+#main-reseller-form table.errors ul, #main-reseller-form #error_no_available ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 12px;
+}
+/* Шаги формы - вперед-назад */
+#navtable {
+	width: 300px !important;
+	margin: 15px auto !important;
+}
+#navtable td {
+	text-align: center;
+}
+/* Шибки в форме */
+#main-reseller-form input.error {
+	border: 1px solid #dc3409;
+	background: #ffebe6
+}
+#main-reseller-form input.ok {
+	border: 1px solid #1cba36;
+	background: #d9ffdf;
+}
+/**************************************************************
+   Форма выбора доступных зон для проверки
+ **************************************************************/
+#main-reseller-form table {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	border-spacing: 0;
+	border-padding: 0;
+}
+#main-reseller-form .check-form-main {
+	padding: 10px;
+}
+/* прячем все доступные зоны, они открываются при клике на ссылку "показать больше доменов" */
+#imena-check-domain-form .all-zones table {
+	display: none;
+	background: #e7e5d3;
+	padding: 10px;
+}
+#imena-check-domain-form th {
+	text-align: left;
+}
+/* таблица с доступными доменными зонами */
+#imena-check-domain-form table.check-form {
+	background: #f3f2ea;
+}
+/* input - "введите доменное имя для проверки" */
+#main-reseller-form .step-0 #domain_name {
+	width: 200px;
+}
+/**************************************************************
+   Проверка доступности выбранных зон
+ **************************************************************/
+#main-reseller-form .domains_table {
+	border: 1px solid #736749;
+	border-bottom: 0px;
+	width: 50%;
+	margin: 10px auto;
+}
+#main-reseller-form .domains_table td {
+	border-bottom: 1px solid #736749;
+	background: #dbd6c9;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 11px;
+	padding: 3px;
+	line-height: 20px;
+}
+/* ячейка таблицы с чекбосом */
+#main-reseller-form .domains_table .td-01 {
+	width: 20px;
+	text-align: center;
+}
+/* ячейка таблицы статуса - занят - свободен */
+#main-reseller-form .domains_table .td-03 {
+	width: 100px;
+}
+/* Если домен свободен */
+#main-reseller-form .domains_table .free-domain {
+	color: #30603c;
+}
+/* Если домен занят */
+#main-reseller-form .domains_table .busy-domain {
+	color: #dc3409;
+}
+/**************************************************************
+   Сервисное соглашение
+ **************************************************************/
+#main-reseller-form .step-2 textarea {
+	width: 100%;
+}
+/* Вывод предупреждений особенных требований к доменным именам, например - домен .UA */
+#main-reseller-form .step-2 .restrictions {
+	color: #dc3409;
+	font: normal 11px Tahoma, Geneva, sans-serif;
+	border: 1px solid #dc3409;
+	padding: 5px;
+	background: #ebdbd7;
+}
+#main-reseller-form .step-2 .restrictions td {
+	padding: 5px;
+}
+/**************************************************************
+   Выбор типа регистрации
+ **************************************************************/
+.registered-client label, .new-client label {
+	font: bold 12px Tahoma, Geneva, sans-serif;
+}
+.registered-client .caption, .new-client .caption {
+	font: normal 11px Tahoma, Geneva, sans-serif;
+	color: #616161;
+	padding: 5px 0 5px 30px;
+}
+/**************************************************************
+   Форма авторизации для зарегистрированных клиентов
+ **************************************************************/
+#main-reseller-form .step-3 table {
+	width: 350px;
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+#main-reseller-form .step-3 label, #main-reseller-form a.rempass {
+ 	display: block;
+}
+#main-reseller-form .step-3 input {
+	width: 100%;
+}
+#main-reseller-form span.error {
+	color: #dc3409;
+	font-size: 90%;
+	display: block;
+}
+/**************************************************************
+  Выбор типа регистрации нового клиента
+ **************************************************************/
+#main-reseller-form .step-4 label {
+	font: bold 12px Tahoma, Geneva, sans-serif;
+}
+#main-reseller-form .step-4 .ttip {
+	font: normal 11px Tahoma, Geneva, sans-serif;
+	color: #616161;
+	padding: 5px 0 5px 30px;
+}
+#main-reseller-form .step-4 table {
+	margin-bottom: 10px;
+}
+/**************************************************************
+  Форма регистрации
+ **************************************************************/
+#main-reseller-form .step-5 table td, #main-reseller-form .step-6 table td {
+	padding: 5px;
+}
+.step-5 td.caption_title, .step-6 td.caption_title {
+	font: italic 16px "Times New Roman", Times, serif;
+	font-weight: bold;
+	background: #e4e4e4;
+ 	border-bottom: 0px !important;
+}
+#main-reseller-form .step-5 td.title {
+	width: 260px;
+}
+#main-reseller-form .step-5 td.input {
+	width: 210px;
+}
+.step-5 td.input input, .step-5 td.input select {
+	width: 100%;
+}
+#main-reseller-form .step-5 .notice_alert {
+	color: #dc3409;
+	font: normal 11px Tahoma, Geneva, sans-serif;
+	border: 1px solid #dc3409;
+	padding: 5px;
+	background: #ebdbd7;
+	display: block;
+}
+#main-reseller-form .step-5 td.info {
+	color: #929291;
+	font: normal 11px Tahoma, Geneva, sans-serif;
+}
+/**************************************************************
+  Подтверждение информации
+ **************************************************************/
+ #main-reseller-form .step-6 table {
+ 	width: 400px;
+ 	margin: 0 auto;
+ }
+ .step-6 table td {
+ 	border-bottom: 1px dashed #ccc;
+ }
+ .step-6 table td span {
+ 	font-weight: bold;
+ }
+ /**************************************************************
+  Срок регистрации
+ **************************************************************/
+#main-reseller-form .step-7 table {
+ 	width: 400px;
+ 	margin: 0 auto;
+}
+.step-7 td.domain-name {
+ 	font-weight: bold;
+ 	width: 200px;
+}
+.step-7 td.term {
+ 	text-align: right;
+ 	width: 200px;
+}
+.step-7 select {
+ 	width: 45px;
+}
+
+
+.edrpou_notice {
+	width: 400px;
+	margin: 0 auto;
+	font-size: 12px;
+	color: #9a003f;
+	text-align: justify;
+}
+.edrpou_notice label {
+	color: #000;
+}
+#accept_edrpou_error {
+	padding-left: 20px;
+}

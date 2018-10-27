@@ -9,7 +9,7 @@
 class Post
 {
 
-    private static $itemsPerPage = 3;
+    private static $itemsPerPage = 10;
 
     public static function getStatuses()
     {
@@ -38,17 +38,7 @@ class Post
             return $postItem;
         }
     }
-        //CREATE TABLE IF NOT EXISTS `post` (
-        //`id` int(11) NOT NULL AUTO_INCREMENT,
-        //`date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        //`email` varchar(255) NOT NULL,
-        //`content` text NOT NULL,
-        //`author_name` varchar(255) NOT NULL,
-        //`preview` varchar(255) NOT NULL,
-        //`type` varchar(50) DEFAULT NULL,
-        //PRIMARY KEY (`id`)
-        //) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
-            //return list (array) of items
+
     private static function getPageCount()
     {
         $db = Db::getConnection();
@@ -101,20 +91,20 @@ class Post
             ];
     }
 
-    public static function createPost($email, $content, $myname, $preview)
+    public static function createPost($email, $city, $postindex, $street, $house, $room, $tel, $content, $myname, $secondname, $lastname , $preview, $regip)
     {
         $db = Db::getConnection();
         $sql = 'INSERT INTO post '
-                .'( email, content, author_name, preview)'
+                .'( email, city, postindex, street, house, room, tel, content, author_name, secondname, lastname , preview, regip)'
                 .'VALUES'
-                ."('$email','$content','$myname','$preview')";
+                ."('$email','$city','$postindex','$street','$house','$room','$tel','$content','$myname','$secondname','$lastname','$preview','$regip')";
 
         $result= $db->exec($sql);
 
         return true;
     }
 
-    public static function updatePost($id, $email, $myname, $content, $status )
+    public static function updatePost($id, $email, $city, $postindex, $street, $house, $room, $myname, $content, $status )
     {
         $db = Db::getConnection();
         $sql = "

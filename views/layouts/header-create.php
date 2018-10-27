@@ -9,8 +9,12 @@
 
     <link href="./template/css/vendor.css" type="text/css" rel="stylesheet">
     <link href="./template/css/style.css" type="text/css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Reseller's form</title>
+    <!--<script type="text/javascript" src="./imena/resellers_form/jquery.js"></script>-->
+    <link rel="stylesheet" href="./imena/resellers_form/check-form.css" media="all" />
 
-    <title>Document</title>
+
 </head>
 <div class="container">
     <div class="row">

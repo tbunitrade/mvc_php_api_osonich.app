@@ -14,9 +14,7 @@ return array(
     'edit/logout' => 'site/index',
 
     'edit/posts' => 'admin',
-
-    'task' => 'site/index',
-    '^/*$' => 'post/list'
+    '^/*$' => 'site/index'
 
 
 );
