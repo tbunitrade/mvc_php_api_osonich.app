@@ -8,11 +8,19 @@
             <fieldset class="form-group">
                 <label for="myname">Имя :</label>
                 <input id="myname" name="myname" type="text" class="form-control" placeholder="укажите имя">
+                <input id="secondname" name="secondname" type="text" class="form-control" placeholder="укажите фамилию">
+                <input id="lastname" name="lastname" type="text" class="form-control" placeholder="укажите отчество">
             </fieldset>
 
             <fieldset class="form-group">
                 <label for="email">Ваша почта :</label>
                 <input id="email" name="email" type="email" class="form-control" placeholder="Email" required>
+
+                <input id="city" name="city" type="text" class="form-control" placeholder="Місто" required>
+                <input id="postindex" name="postindex" type="text" class="form-control" placeholder="Місто" required>
+                <input id="street" name="street" type="text" class="form-control" placeholder="Місто" required>
+                <input id="house" name="house" type="text" class="form-control" placeholder="Місто" required>
+                <input id="room" name="room" type="text" class="form-control" placeholder="Місто" required>
             </fieldset>
 
             <fieldset>
