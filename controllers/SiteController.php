@@ -15,11 +15,6 @@ class SiteController
         return true;
     }
 
-//    public function actionLogin() {
-//        require_once(ROOT . '/views/site/login.php');
-//
-//        return true;
-//    }
 
     public function actionDomain() {
         require_once(ROOT . '/views/site/domain.php');
